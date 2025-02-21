@@ -19,7 +19,7 @@ Este projeto é um sistema inteligente de recrutamento especializado em vagas de
 </p>
 
 ## Funcionalidades
-- Busca de Candidatos: Utiliza um agente de IA para realizar pesquisas online e encontrar os top 5 candidatos que atendem aos requisitos da vaga.
+- Busca de Candidatos: Utiliza Agentes de IA para realizar pesquisas online e encontrar os top 5 candidatos que atendem aos requisitos da vaga.
 - Interface Intuitiva: Frontend em Streamlit que permite aos usuários inserir os requisitos da vaga e visualizar os resultados de forma clara (Geração estruturada de relatórios de candidatos).
 - Envio de Resultados por E-mail: Possibilidade de enviar os resultados da busca diretamente para um e-mail especificado.
 - Feedback em Tempo Real: Exibe informações sobre o uso de tokens e o tempo de execução da busca.
@@ -30,6 +30,16 @@ Este projeto é um sistema inteligente de recrutamento especializado em vagas de
 - Ferramenta de Busca: SerperDevTool
 - Frontend: Streamlit
 - Envio de E-mails: Biblioteca personalizada (sendmail.py)
+
+## Arquitetura de Agentes IA com CrewAI
+O sistema utiliza o framework CrewAI para criar uma equipe especializada de agentes inteligentes que colaboram no processo de recrutamento. Cada agente possui funções e capacidades específicas:
+- Agent 1: Em desenvolvimento
+- Agent 2: Em desenvolvimento
+- Agent 3: Em desenvolvimento
+
+<p align="center">
+<img src = "./img/arquitetura_crew_1.0.png">
+</p>
 
 ## Instalação
 
@@ -103,7 +113,7 @@ curl -X POST "http://localhost:8000/research_candidates" \
 └── README.md         # Documentação
 ```
 
-## Configuração 🔧
+## Configuração
 
 | Variável de Ambiente | Descrição                           | Como Obter                 |
 |----------------------|-----------------------------------|---------------------------|

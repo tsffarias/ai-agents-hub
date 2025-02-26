@@ -1,0 +1,74 @@
+services:
+  backend-1:
+    hostname: backend-1
+    build: 
+      context: ./app/backend
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    volumes:
+      - ./app/backend:/app
+    ports:
+      - "8001:8000"
+    networks:
+      - mynetwork
+
+  backend-2:
+    hostname: backend-2
+    build: 
+      context: ./app/backend
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    volumes:
+      - ./app/backend:/app
+    ports:
+      - "8002:8000"
+    networks:
+      - mynetwork
+
+  backend-3:
+    hostname: backend-3
+    build: 
+      context: ./app/backend
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    volumes:
+      - ./app/backend:/app
+    ports:
+      - "8003:8000"
+    networks:
+      - mynetwork
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - backend-1
+      - backend-2
+      - backend-3
+    networks:
+      - mynetwork
+
+  frontend:
+    build: 
+      context: ./app/frontend
+      dockerfile: Dockerfile
+    volumes:
+      - ./app/frontend:/app
+    env_file:
+    - .env
+    ports:
+      - "8501:8501"
+    depends_on:
+      - nginx
+    networks:
+      - mynetwork
+      
+networks:
+  mynetwork:
+    driver: bridge

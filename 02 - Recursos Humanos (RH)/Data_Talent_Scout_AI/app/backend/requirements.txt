@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+SQLAlchemy
+psycopg2-binary
+python-dotenv
+tqdm
+pandas
+pyarrow
+boto3
+asyncpg
+pydantic
+crewai
+crewai[tools]
